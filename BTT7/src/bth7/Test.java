@@ -5,35 +5,24 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) {
-        // --- YÊU CẦU 3: Tạo đối tượng và gán giá trị thủ công ---
-        Sach Toan = new Sach();
-        Toan.maSach = "001";
-        Toan.tieuDe = "Giai tich";
-        Toan.tacGia = "Nguyen Van A";
-        Toan.namXuatBan = 2023;
-        Toan.soLuong = 10;
+        // Khởi tạo đối tượng bằng Constructor đầy đủ tham số (Yêu cầu 4)
+        Sach toan = new Sach("001", "Giai tich", "Nguyen Van A", 2024, 10);
 
-        Sach Tin = new Sach();
-        Tin.maSach = "002";
-        Tin.tieuDe = "Lap trinh co ban";
-        Tin.tacGia = "Tran Van B";
-        Tin.namXuatBan = 2024;
-        Tin.soLuong = 20;
+        // Khởi tạo đối tượng bằng constructor mặc định kết hợp Setter (Yêu cầu 2)
+        Sach tin = new Sach();
+        tin.setMaSach("002");
+        tin.setTieuDe("Lap trinh co ban");
+        tin.setTacGia("Tran Van B");
+        tin.setNamXuatBan(2023);
+        tin.setSoLuong(20);
 
-        // In kiểm tra đối tượng
-        System.out.println("=== THONG TIN SACH VUA TAO ===");
-        Toan.hienThiThongTin();
-        Tin.hienThiThongTin();
-
-        // --- YÊU CẦU 4: Quản lý danh sách bằng ArrayList ---
+        // Quản lý danh sách đối tượng bằng ArrayList
         ArrayList<Sach> dsSach = new ArrayList<>();
+        dsSach.add(toan);
+        dsSach.add(tin);
 
-        // Thêm các cuốn sách vào ArrayList
-        dsSach.add(Toan);
-        dsSach.add(Tin);
-
-        // Duyệt danh sách và in ra màn hình
-        System.out.println("=== DANH SACH SACH TRONG ARRAYLIST ===");
+        // Duyệt danh sách và in thông tin
+        System.out.println("=== DANH SACH SACH TRONG THU VIEN ===");
         for (int i = 0; i < dsSach.size(); i++) {
             System.out.println("Cuon sach thu " + (i + 1) + ":");
             dsSach.get(i).hienThiThongTin();
